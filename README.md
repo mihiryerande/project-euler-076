@@ -1,4 +1,7 @@
-# Project Euler - Problem 76 - Counting Summations
+# Project Euler
+
+## Problem 76 - Counting Summations
+
 It is possible to write five as a sum in exactly six different ways:
 
     4 + 1
