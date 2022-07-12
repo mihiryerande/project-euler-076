@@ -12,6 +12,8 @@
 #
 #     How many different ways can one hundred be written as a sum of at least two positive integers?
 
+from typing import Optional
+
 # Triangular grid to keep track of partitions counted
 # PARTITION_WAYS[i][j] is the
 #   number of ways to partition `i`
@@ -20,7 +22,7 @@
 PARTITION_COUNTS = []
 
 
-def partition_count_from_grid(n, max_part):
+def partition_count_from_grid(n: int, max_part: int) -> Optional[int]:
     """
     Returns the computed value of number of partitions of `n`
       where the parts in any such partition do not exceed `max_part`,
@@ -50,15 +52,15 @@ def partition_count_from_grid(n, max_part):
         return None
 
 
-def partition_count(n_0, max_part_0=None):
+def partition_count(n_0: int, max_part_0: Optional[int] = None) -> int:
     """
     Returns the number of partitions of `n`
       where the parts in any such partition do not exceed `max_part`.
     Note that this also includes partitions having no parts of size `max_part`.
 
     Args:
-        n_0        (int): Non-negative integer
-        max_part_0 (int): Maximum allowed value of any part
+        n_0        (int):           Non-negative integer
+        max_part_0 (Optional[int]): Maximum allowed value of any part
 
     Returns:
         (int): Number of partitions of `n` having maximum part value at most `max_part`.
@@ -128,7 +130,7 @@ def partition_count(n_0, max_part_0=None):
     return PARTITION_COUNTS[n_0][max_part_0-1]
 
 
-def main(n):
+def main(n: int) -> int:
     """
     Returns the number of ways to express `n` as an unordered sum of at least two positive integers.
     For example, 1+2 and 2+1 are considered the same sum.
